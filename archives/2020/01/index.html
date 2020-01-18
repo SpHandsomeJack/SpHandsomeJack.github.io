@@ -24,7 +24,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg,#ccc,#000);
     }
   </style>
   
@@ -38,7 +38,29 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay"></div>
+
+<script >
+    window.onload=function(){
+    var bglist = [];
+    bglist[0] = "/img/star0.jpg";
+    bglist[1] = "/img/star1.jpg";
+    bglist[2] = "/img/star2.jpg";
+    bglist[3] = "/img/star3.jpg";
+    bglist[4] = "/img/star4.jpg";
+    bglist[5] = "/img/star5.jpg";
+    var i = 0;
+    var bkg=document.getElementsByClassName("left-col")[0]; 
+    bkg.style.background="url(/img/star0.jpg)";  
+    function time(){
+        i<5?i++:i=0; 
+        bkg.style.background="url("+bglist[i]+")"; 
+    }
+    setInterval(time,30000);
+    }
+</script>
+
+
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -62,7 +84,7 @@
 			文章数 2
 		</nav>
 		<nav>
-			总字数 <span class="post-count">191</span>
+			总字数 <span class="post-count">185</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -84,11 +106,9 @@
 				
 					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="qq" target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=2313235285&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="/2313235285@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -125,11 +145,9 @@
 					
 						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="qq" target="_blank" href="https://wpa.qq.com/msgrd?v=3&uin=2313235285&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="/2313235285@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -179,12 +197,23 @@
     	 
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/18/test/">test</a>
+      <a class="archive-article-title" href="/2020/01/18/test/">第一次用Markdown</a>
     </h1>
   
 
         <div class="article-info info-on-right">
           
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
           
 
         </div>
@@ -293,6 +322,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -442,3 +475,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   </div>
 </body>
 </html>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
