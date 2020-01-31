@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>第一次用Markdown | HandsomeJack</title>
+  <title>攻防世界新手区hello_pwn | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="[攻防世界]新手区hello_pwn先放进linux里看一下有无保护">
 <meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一次用Markdown">
+<meta property="og:title" content="攻防世界新手区hello_pwn">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
 <meta property="og:description" content="[攻防世界]新手区hello_pwn先放进linux里看一下有无保护">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;c.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;d.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;e.png">
-<meta property="og:updated_time" content="2020-01-31T02:41:10.002Z">
+<meta property="og:updated_time" content="2020-01-31T02:57:57.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;a.png">
   
@@ -195,7 +195,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第一次用Markdown
+      攻防世界新手区hello_pwn
     </h1>
   
 
@@ -209,7 +209,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="攻防世界-新手区hello-pwn"><a href="#攻防世界-新手区hello-pwn" class="headerlink" title="[攻防世界]新手区hello_pwn"></a>[攻防世界]新手区hello_pwn</h1><p>先放进linux里看一下有无保护<br><img src="a.png" alt="额"></p>
+        <h1 id="攻防世界-新手区hello-pwn"><a href="#攻防世界-新手区hello-pwn" class="headerlink" title="[攻防世界]新手区hello_pwn"></a>[攻防世界]新手区hello_pwn</h1><p>先放进linux里看一下有无保护<br><img src="a.png" alt="先checksec一下"></p>
 <a id="more"></a>
 <p>用64位IDA打开，先看字符串窗口，看看有没有可以利用的字符串<br><img src="b.png" alt="在这里插入图片描述"><br>发现可以有system和cat flag，组合使用可以直接拿到flag，点进去看看<br><img src="c.png" alt="在这里插入图片描述"><br>发现在sub_400686函数里，并且可以直接用<br><img src="d.png" alt="在这里插入图片描述"><br><img src="e.png" alt="在这里插入图片描述"><br>而主函数里调用该函数条件是dword_60106C等于0x6E756161，且read存在溢出漏洞，<strong>栈溢出是向高地址溢出</strong>，所以可以由601068溢出来覆盖60106C。</p>
 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>让unk_601068溢出，覆盖dword_60106C的值为0x6E756161，来使main的if判断成立，调用sub_400686函数，得到flag。</p>
