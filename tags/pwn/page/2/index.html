@@ -6,25 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>攻防世界新手区CGfsb | HandsomeJack</title>
+  <title>Tag: pwn | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[攻防世界]新手区CGfsb依旧是先放到linux里扫一下，看看文件属性及开启的保护措施开了canary和nx，即没法直接覆盖返回地址和使用shellcode，题目里提示了prinf的作用，可以着重看看prinf用32位IDA打开，既有system，也有cat flag">
-<meta name="keywords" content="pwn">
-<meta property="og:type" content="article">
-<meta property="og:title" content="攻防世界新手区CGfsb">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;index.html">
+  <meta name="description" content="一天一道坑题，头发远离我">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HandsomeJack">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;pwn&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="[攻防世界]新手区CGfsb依旧是先放到linux里扫一下，看看文件属性及开启的保护措施开了canary和nx，即没法直接覆盖返回地址和使用shellcode，题目里提示了prinf的作用，可以着重看看prinf用32位IDA打开，既有system，也有cat flag">
+<meta property="og:description" content="一天一道坑题，头发远离我">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;a.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;b.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;c.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;d.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;e.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;f.png">
-<meta property="og:updated_time" content="2020-02-08T02:28:40.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;08&#x2F;CGfsb&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -189,81 +180,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CGfsb" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      攻防世界新手区CGfsb
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/01/31/hello_pwn/" class="archive-article-date">
+  	<time datetime="2020-01-31T02:27:26.490Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/01/31/hello_pwn/">攻防世界新手区hello_pwn</a>
     </h1>
   
 
-        
-        <a href="/2020/02/08/CGfsb/" class="archive-article-date">
-  	<time datetime="2020-02-08T02:26:37.343Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-08</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：630字 | 预计阅读时长：2分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区CGfsb"><a href="#攻防世界-新手区CGfsb" class="headerlink" title="[攻防世界]新手区CGfsb"></a>[攻防世界]新手区CGfsb</h1><p>依旧是先放到linux里扫一下，看看文件属性及开启的保护措施<br><img src="a.png" alt="checksec\~checksec\~checksec~"><br>开了canary和nx，即没法直接覆盖返回地址和使用shellcode，题目里提示了prinf的作用，可以着重看看prinf<br>用32位IDA打开，既有system，也有cat flag</p>
-<a id="more"></a>
-<p><img src="b.png" alt=""><br>再看主函数的伪代码<br><img src="c.png" alt=""><br>这个程序流程就是让你输入你的名字和要留下的信息，它就会说你好，并用printf输出你留下的信息。如果pwnme的值为8，那么判断成立就会直接执行system(“cat flag”)拿到flag，否则输出Thank you<br><img src="d.png" alt=""><br>第23行的这个printf不是正确的用法，会产生格式化字符串漏洞<br>printf正确用法是printf(“格式化字符串，……” , 参量，……)，比如输出一个字符串a应该用printf(“%s”,a)，但<strong>如果写成了printf(a),就会出现格式化字符串漏洞，如果a是”%x”，那么printf(a)就会输出它后面的内存中的数据</strong>。<br><img src="e.png" alt=""><br>61即 ‘a’ 的ASCII码，61616161即为 ‘aaaa’，可以看到输入的 ‘aaaa’ 偏移了10位，如果你不确定自己数的对不对，可以验证一下，用 ‘%10$x’ ，这个可以直接查看第十位的数据<br><img src="f.png" alt=""><br>偏移的确是10，所以输出的也是61616161<br>格式化字符串中，有一个%n比较特殊，<strong>%n可以将它前面已打印的字符个数赋值给后面它对应的参数</strong>，也许看起来有点绕口。。。举个栗子↓↓</p>
-<blockquote>
-<p>来自于<a href="https://stackoverflow.com/questions/3401156/what-is-the-use-of-the-n-format-specifier-in-c" target="_blank" rel="noopener">stack overflow</a><br>#include &lt;stdio.h&gt;<br>int main(){<br>int val;<br>printf(“blah %n blah\n”, &amp;val);<br>printf(“val = %d\n”, val);<br>return 0;<br>}<br>output:<br>blah  blah<br>val = 5</p>
-</blockquote>
-<p>%n前的字符个数为5，所以将5赋值给了val。但是好像Windows上不让用%n赋值….所以别再Windows下试了</p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li>第一次运行程序，name随便输，在输入message时利用%x计算输入位置偏移</li>
-<li>第二次运行程序，name随便输，在输入message时，先输入pwnme的地址</li>
-<li>利用  <em>%偏移$n</em>  改变pwnme的值为8</li>
-<li>拿到flag<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2></li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">payload = p32(<span class="number">0x0804A068</span>) + <span class="string">'aaaa%10$n'</span></span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">'111.198.29.45'</span>,<span class="number">56666</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'tell me your name:'</span>,<span class="string">'abcd'</span>)</span><br><span class="line">p.sendlineafter(<span class="string">'your message please:'</span>,payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
-<p>payload解释：</p>
-<ol>
-<li>p32(0x0804A068)：pwnme的地址，双击pwnme即可查看</li>
-<li>‘aaaa%10$n’：p32打包后的数据是4位的，但是要赋值8给pwnme，所以再填充4个a，然后把8赋值给第十个参数，即pwnme的地址对应的值</li>
-</ol>
-<p>关于格式化字符串漏洞的原理，可以看看<a href="https://blog.csdn.net/qq_43394612/article/details/84900668" target="_blank" rel="noopener">这篇文章</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>好活儿，当赏！<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -275,143 +221,22 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/08/CGfsb/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/02/17/forgot/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          攻防世界进阶区forgot
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/02/07/level3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">攻防世界新手区get_shell、level3</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-新手区CGfsb"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]新手区CGfsb</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "http://yoursite.com/2020/02/08/CGfsb/",
-  owner: 'SpHandsomeJack',
-  repo: 'gitment-comment',
-  oauth: {
-    client_id: 'e125cda2916a59dfd01a',
-    client_secret: 'aa58b71147342913b05045b2ec4e649b17024b31',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/tags/pwn/">&amp;laquo; Prev</a><a class="page-number" href="/tags/pwn/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -438,9 +263,9 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

@@ -86,10 +86,10 @@
 			</ul>
 		</nav>
 		<nav>
-			文章数 12
+			文章数 13
 		</nav>
 		<nav>
-			总字数 <span class="post-count">5.3k</span>
+			总字数 <span class="post-count">5.7k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -181,6 +181,83 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-dice_game" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/19/dice_game/">攻防世界进阶区dice_game</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/19/dice_game/" class="archive-article-date">
+  	<time datetime="2020-02-19T01:57:02.050Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
+</a>
+        
+      </header>
+<div align="center" class="post-count">字数：464字 | 预计阅读时长：1分钟</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="攻防世界-进阶区dice-game"><a href="#攻防世界-进阶区dice-game" class="headerlink" title="[攻防世界]进阶区dice_game"></a>[攻防世界]进阶区dice_game</h1><p>还是先看文件属性及保护措施<br><img src="a.png" alt="checksec下"><br>除了canary基本都开了，应该是要栈溢出来做题<br>看字符串窗口发现没有system也没有bash，一开始还以为给的libc是让我调用system的，后来发现在sub_B28这个函数里，有读取flag的操作，所以只要进入sub_B28，即可拿到flag<br><img src="b.png" alt="sub_B28函数"></p>
+        
+          <a class="article-more-a" href="/2020/02/19/dice_game/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/19/dice_game/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Mary_Morton" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -846,83 +923,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/01/31/level2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello_pwn" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/31/hello_pwn/">攻防世界新手区hello_pwn</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/31/hello_pwn/" class="archive-article-date">
-  	<time datetime="2020-01-31T02:27:26.490Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：204字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区hello-pwn"><a href="#攻防世界-新手区hello-pwn" class="headerlink" title="[攻防世界]新手区hello_pwn"></a>[攻防世界]新手区hello_pwn</h1><p>先放进linux里看一下有无保护<br><img src="a.png" alt="先checksec一下"></p>
-        
-          <a class="article-more-a" href="/2020/01/31/hello_pwn/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/31/hello_pwn/">展开全文 >></a>
         </p>
       
 
