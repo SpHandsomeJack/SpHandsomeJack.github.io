@@ -86,10 +86,10 @@
 			</ul>
 		</nav>
 		<nav>
-			文章数 14
+			文章数 15
 		</nav>
 		<nav>
-			总字数 <span class="post-count">6.1k</span>
+			总字数 <span class="post-count">7.2k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -181,6 +181,83 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-int_overflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/01/int_overflow/">攻防世界新手区int_overflow</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/01/int_overflow/" class="archive-article-date">
+  	<time datetime="2020-02-01T02:48:56.302Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
+</a>
+        
+      </header>
+<div align="center" class="post-count">字数：794字 | 预计阅读时长：3分钟</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="攻防世界-新手区int-overflow"><a href="#攻防世界-新手区int-overflow" class="headerlink" title="[攻防世界]新手区int_overflow"></a>[攻防世界]新手区int_overflow</h1><p>这个题，题目提示很明显，往整数溢出方向想<br>先查看文件基本信息，得知是32位程序，且没有canary和PIE<br><img src="a.png" alt="先checksec查看"><br>然后看看字符串窗口，看有没有可以利用的字符串，发现system和cat flag，且存在一些需要留意的高危函数，strcpy和read。</p>
+        
+          <a class="article-more-a" href="/2020/02/01/int_overflow/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/01/int_overflow/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-level2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">

