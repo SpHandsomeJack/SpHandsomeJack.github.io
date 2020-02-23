@@ -86,10 +86,10 @@
 			</ul>
 		</nav>
 		<nav>
-			文章数 15
+			文章数 17
 		</nav>
 		<nav>
-			总字数 <span class="post-count">7.2k</span>
+			总字数 <span class="post-count">8k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -181,6 +181,160 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-pwn1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/23/pwn1/">攻防世界进阶区pwn1</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/23/pwn1/" class="archive-article-date">
+  	<time datetime="2020-02-23T02:35:52.458Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-23</time>
+</a>
+        
+      </header>
+<div align="center" class="post-count">字数：615字 | 预计阅读时长：2分钟</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="攻防世界-进阶区pwn1"><a href="#攻防世界-进阶区pwn1" class="headerlink" title="[攻防世界]进阶区pwn1"></a>[攻防世界]进阶区pwn1</h1><p><img src="a.png" alt=""><br>这个题除了PIE基本都开了，可能是要绕过canary或者泄露canary再栈溢出<br>运行程序发现选1是写入，选2是输出，选3是退出<br><img src="aa.png" alt=""><br>IDA打开静态分析一波<br><img src="b.png" alt="看字符串窗口"><br>发现没有system和/bin/sh，但是有write和puts，并且题目附件给了个libc，所以应该是要用write或puts泄露自身地址，计算system的真实地址</p>
+        
+          <a class="article-more-a" href="/2020/02/23/pwn1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/23/pwn1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-monkey" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/22/monkey/">攻防世界进阶区monkey</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/22/monkey/" class="archive-article-date">
+  	<time datetime="2020-02-22T01:15:09.987Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-22</time>
+</a>
+        
+      </header>
+<div align="center" class="post-count">字数：148字 | 预计阅读时长：1分钟</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="攻防世界-进阶区monkey"><a href="#攻防世界-进阶区monkey" class="headerlink" title="[攻防世界]进阶区monkey"></a>[攻防世界]进阶区monkey</h1><p>开始时我觉得这个题会比较简单，因为居然只开了nx<br><img src="a.png" alt=""><br>然而当我用IDA打开，想看看伪代码时，又觉得事情不大简单<br><img src="b.png" alt="好多的函数······"></p>
+        
+          <a class="article-more-a" href="/2020/02/22/monkey/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/22/monkey/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-pwn-100" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -772,160 +926,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/02/02/guess_num/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-when_did_you_born" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/when_did_you_born/">攻防世界新手区when_did_you_born</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/02/when_did_you_born/" class="archive-article-date">
-  	<time datetime="2020-02-02T05:35:50.625Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：425字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区when-did-you-born"><a href="#攻防世界-新手区when-did-you-born" class="headerlink" title="[攻防世界]新手区when_did_you_born"></a>[攻防世界]新手区when_did_you_born</h1><p>还是先看文件信息及防护措施<br><img src="a.png" alt="checksec检查文件"><br>64位文件用64IDA打开，先看字符串窗口，找可利用的字符串</p>
-        
-          <a class="article-more-a" href="/2020/02/02/when_did_you_born/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/when_did_you_born/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-cgpwn2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/02/cgpwn2/">攻防世界新手区cgpwn2</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/02/cgpwn2/" class="archive-article-date">
-  	<time datetime="2020-02-02T02:11:38.661Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：457字 | 预计阅读时长：1分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区cgpwn2"><a href="#攻防世界-新手区cgpwn2" class="headerlink" title="[攻防世界]新手区cgpwn2"></a>[攻防世界]新手区cgpwn2</h1><p>依旧，先看文件属性信息，得知是个32位程序，且只开了NX<br><img src="a.png" alt="checksec查看信息"><br>拖进32位IDA，先看字符串窗口，找有无可利用的字符串。</p>
-        
-          <a class="article-more-a" href="/2020/02/02/cgpwn2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/02/cgpwn2/">展开全文 >></a>
         </p>
       
 
