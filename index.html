@@ -86,10 +86,10 @@
 			</ul>
 		</nav>
 		<nav>
-			文章数 18
+			文章数 19
 		</nav>
 		<nav>
-			总字数 <span class="post-count">9.5k</span>
+			总字数 <span class="post-count">10.6k</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -181,6 +181,83 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-hacknote" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/17/hacknote/">攻防世界进阶区hacknote</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/17/hacknote/" class="archive-article-date">
+  	<time datetime="2020-10-17T03:35:17.363Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
+</a>
+        
+      </header>
+<div align="center" class="post-count">字数：1.1k字 | 预计阅读时长：4分钟</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="攻防世界-进阶区hacknote"><a href="#攻防世界-进阶区hacknote" class="headerlink" title="[攻防世界]进阶区hacknote"></a>[攻防世界]进阶区hacknote</h1><p>又一道堆利用的题，虽然是堆利用的题，不过这题比较好利用漏洞，我感觉这题不好写的地方就在于如何利用system拿到shell，这道题没法直接用system(/bin/sh)，需要用到linux执行的技巧。<br>这道题给了libc，所以一会就不用自己泄露libc地址了，可以直接用。<br><img src="a.png" alt="checksec先"><br>32位、能覆写、有栈保护、有nx，没随机地址。可以覆写，但是由于不能修改堆内容，只有创建堆的时候才可以写入，所以可以在创建时让指针指向任一函数的got表地址，但是没法修改其内容，只好另寻他路。<br>运行一下，发现是个菜单题，可以执行添加、删除、输出操作。</p>
+        
+          <a class="article-more-a" href="/2020/10/17/hacknote/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/17/hacknote/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-babyfengshui" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -858,83 +935,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/02/08/CGfsb/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-level3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/07/level3/">攻防世界新手区get_shell、level3</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/07/level3/" class="archive-article-date">
-  	<time datetime="2020-02-07T04:22:19.598Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
-</a>
-        
-      </header>
-<div align="center" class="post-count">字数：765字 | 预计阅读时长：3分钟</div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="攻防世界-新手区get-shell和level3"><a href="#攻防世界-新手区get-shell和level3" class="headerlink" title="[攻防世界]新手区get_shell和level3"></a>[攻防世界]新手区get_shell和level3</h1><h2 id="get-shell"><a href="#get-shell" class="headerlink" title="get_shell"></a>get_shell</h2><p>先说这个神奇的get_shell题，我实在想不明白为什么这道题可以值7分，我还以为是新手区的压轴题，万万没想到，它真就如题所说的那样，“运行就能拿到shell呢，真的”<br>IDA：<br><img src="a.png" alt="真没啥可说的，运行即可"></p>
-        
-          <a class="article-more-a" href="/2020/02/07/level3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pwn</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/07/level3/">展开全文 >></a>
         </p>
       
 
