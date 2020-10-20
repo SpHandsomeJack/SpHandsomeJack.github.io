@@ -21,13 +21,14 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;b2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;c.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;c2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;c22.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;c3.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;c4.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;d.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;d2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;d3.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;d4.png">
-<meta property="og:updated_time" content="2020-10-04T03:24:49.421Z">
+<meta property="og:updated_time" content="2020-10-20T01:03:42.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;10&#x2F;04&#x2F;babyfengshui&#x2F;a.png">
   
@@ -211,7 +212,7 @@
 </a>
         
       </header>
-<div align="center" class="post-count">字数：1.5k字 | 预计阅读时长：6分钟</div>
+<div align="center" class="post-count">字数：1.6k字 | 预计阅读时长：6分钟</div>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -227,7 +228,7 @@
 <p>运行一下，发现是个菜单题，可以执行添加新用户、删除、更改等操作。<br><img src="b2.png" alt="运行图"><br>32位IDA打开看看，没有“/bin/sh”，可能要自己写入。</p>
 <a id="more"></a>
 <p>先看几个关键函数。这个添加新用户的函数，每次调用会创建两个堆，先malloc一个大小为a1的堆，然后malloc一个固定0x80的堆，大小为a1的堆用于存储description，姑且就把这个存储description的堆叫做Desc。而固定0x80的这个堆，暂且叫Note堆，他的前4位 (因为是32位程序，如果是64位程序，那么存储的地址就是8位) 存储的是Desc堆的地址，而后 0x80-0x4 即124位都存储的name的值。<br><img src="c.png" alt="add函数"></p>
-<p>然后看看delete函数，发现个小漏洞，不过之后用不到这些指针，但是自己写程序的时候记得要注意<br><img src="c2.png" alt="del函数"></p>
+<p>然后看看delete函数，程序在free指针指向的空间后把指针置NULL了，没发现什么漏洞<br><img src="c2.png" alt="del函数"><br>在stdio.h头文件里，有一句&quot;define NULL 0&quot;，所以这里置0相当于置NULL了<br><img src="c22.png" alt=""></p>
 <p>display函数，用于输出已有的用户姓名及描述<br><img src="c3.png" alt="display函数"></p>
 <p>update函数，更改用户数据。里面有一句关键的判断，第14句判断 “(Desc堆地址+数据长度length)不能大于等于(Note地址-  4)”，但是这句判断仅适用于堆块相邻的情况下。<br><img src="c4.png" alt="update函数"></p>
 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
